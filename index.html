@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VanguardHorizonX | Giant X Logo</title>
+    <style>
+        /* Basic Layout Settings */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        html { scroll-behavior: smooth; }
+        
+        /* Light Theme Body */
+        body { background-color: #f8fafc; color: #1e293b; }
+
+        /* Dark Contrast Navbar */
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background-color: #0f172a; 
+            height: 100px; 
+            padding: 0 10%; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+            perspective: 1000px; 
+        }
+        
+        /* BRAND TEXT STYLING & HOVER ANIMATION */
+        .logo { 
+            display: flex;
+            align-items: center; /* Ensures the text and the giant X align seamlessly on the same center row */
+            font-size: 26px; 
+            font-weight: 800; 
+            color: #ffffff; 
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        /* --- NEW GIANT GRADIENT X STYLING --- */
+        .logo .red-blue-x { 
+            display: inline-block;
+            font-size: 42px; /* Made the X significantly larger than VanguardHorizon */
+            font-weight: 900;
+            margin-left: 4px; /* Soft structural spacing between the text and the giant X */
+            background: linear-gradient(135deg, #ef4444 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Hover Effect for the entire text: adds a cyber-glow and expands it slightly */
+        .logo:hover {
+            color: #f8fafc;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.2);
+            transform: scale(1.02);
+        }
+
+        /* Hover Effect specific to the giant X: pops outward dynamically */
+        .logo:hover .red-blue-x {
+            transform: scale(1.15) rotate(15deg);
+            filter: drop-shadow(0 0 12px rgba(239, 68, 68, 0.7));
+        }
+        /* --- END OF GIANT GRADIENT X STYLING --- */
+
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { text-decoration: none; color: #94a3b8; font-weight: 500; }
+        nav a:hover { color: #ffffff; }
+
+        /* OPTIMIZED FAST-LOOP 3D ANIMATION TIMELINE */
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .animated-logo {
+            height: 75px; 
+            width: auto; 
+            object-fit: contain;
+            backface-visibility: visible;
+            transform-style: preserve-3d;
+            animation: optimized3DFlipLoop 6.5s infinite cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        @keyframes optimized3DFlipLoop {
+            0% {
+                opacity: 0;
+                transform: translateX(-150px) scale(0.4) rotateY(-180deg);
+                filter: drop-shadow(0 0 0px rgba(59, 130, 246, 0));
+            }
+            7.7% {
+                opacity: 1;
+                transform: translateX(0) scale(1) rotateY(0deg);
+                filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4));
+            }
+            23% {
+                transform: translateX(0) scale(1.05) rotateY(360deg);
+                filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.9));
+            }
+            84.6% {
+                opacity: 1;
+                transform: translateX(0) scale(1) rotateY(360deg);
+                filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+            }
+            92.3% {
+                opacity: 0;
+                transform: translateX(180px) scale(0.5) rotateY(540deg);
+                filter: drop-shadow(0 0 0px rgba(59, 130, 246, 0));
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-150px) rotateY(0deg);
+            }
+        }
+
+        /* Hero Section */
+        .hero { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            min-height: 60vh; 
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #1e293b 0%, #f8fafc 100%);
+            color: white;
+        }
+        .hero h1 { font-size: 48px; margin-bottom: 15px; }
+        .hero h1 span { color: #3b82f6; }
+        .hero p { font-size: 18px; color: #cbd5e1; max-width: 600px; margin-bottom: 30px; }
+        .cta-btn { text-decoration: none; background-color: #3b82f6; color: white; padding: 12px 28px; border-radius: 6px; font-weight: bold; }
+        .cta-btn:hover { background-color: #2563eb; }
+
+        /* Skills Section */
+        .skills { padding: 80px 10%; text-align: center; background-color: #ffffff; }
+        .skills h2 { font-size: 32px; margin-bottom: 30px; color: #0f172a; }
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .card { background-color: #f1f5f9; padding: 15px 25px; border-radius: 6px; font-weight: 600; color: #334155; }
+
+        /* Contact Section */
+        .contact { padding: 80px 10%; background-color: #0f172a; color: white; text-align: center; }
+        .contact h2 { font-size: 32px; margin-bottom: 15px; }
+        .contact p { color: #94a3b8; margin-bottom: 30px; }
+        .email-link { display: inline-block; color: #3b82f6; font-size: 20px; font-weight: bold; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. NAVIGATION -->
+    <nav>
+        <div class="logo-box">
+            <img src="logo.png" alt="Logo" class="animated-logo">
+            <div class="logo">VanguardHorizon<span class="red-blue-x">X</span></div>
+        </div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- 2. HERO INTRO -->
+    <section id="about" class="hero">
+        <h1>Hi, I'm a <span>MERN Stack</span> Developer</h1>
+        <p>I build clean, high-performance web applications. Welcome to my GitHub practice landing page.</p>
+        <a href="#contact" class="cta-btn">Let's Work Together</a>
+    </section>
+
+    <!-- 3. SKILLS GRID -->
+    <section id="skills" class="skills">
+        <h2>My Tech Stack</h2>
+        <div class="grid">
+            <div class="card">MongoDB</div>
+            <div class="card">Express.js</div>
+            <div class="card">React.js</div>
+            <div class="card">Node.js</div>
+            <div class="card">JavaScript</div>
+            <div class="card">Git & GitHub</div>
+        </div>
+    </section>
+
+    <!-- 4. CONTACT QUICK LINK -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p>Have an open opportunity or project concept? Reach out via email.</p>
+        <a href="mailto:your-email@example.com" class="email-link">your-email@example.com</a>
+    </section>
+
+</body>
+</html>
