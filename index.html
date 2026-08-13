@@ -1,9 +1,15 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta
+        name="description"
+        content="VanguardHorizonX — a modern developer portfolio showcasing full-stack web development, projects, and technology skills."
+    >
     <title>VanguardHorizonX | Full-Stack Developer</title>
 
     <style>
@@ -83,6 +89,11 @@
             gap: 15px;
 
             cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-box:hover .animated-logo {
+            transform: translateY(-4px);
         }
 
         .animated-logo {
@@ -96,9 +107,7 @@
             filter:
                 drop-shadow(0 0 8px rgba(59, 130, 246, 0.35));
 
-            animation:
-                logoEntrance 1.4s ease,
-                logoFloat 4s ease-in-out infinite;
+            animation: logoEntrance 1.4s ease both;
         }
 
 
@@ -282,42 +291,43 @@
         ========================================================= */
 
         .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-            padding:
-                10px
-                18px;
+    gap: 8px;
 
-            border-radius: 10px;
+    padding: 11px 20px;
 
-            color: white !important;
+    min-width: 145px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #2563eb,
-                    #7c3aed
-                );
+    border-radius: 10px;
 
-            box-shadow:
-                0 0 18px
-                rgba(59, 130, 246, 0.25);
+    color: white !important;
 
-            transition: 0.3s ease;
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(59, 130, 246, 0.25);
+
+    transition: 0.3s ease;
+
+    white-space: nowrap;
+}
+
+        .nav-btn span {
+            display: inline-block;
+            transition: transform 0.3s ease;
         }
 
-
-        .nav-btn:hover {
-
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 0 30px
-                rgba(59, 130, 246, 0.5);
-        }
-
-
-        .nav-btn::after {
-            display: none;
+        .nav-btn:hover span {
+            transform: translateX(4px);
         }
 
 
@@ -906,6 +916,383 @@
             margin-bottom: 12px;
         }
 
+/* =========================================================
+   PROJECTS SECTION
+========================================================= */
+
+.projects {
+
+    padding: 110px 8%;
+
+    text-align: center;
+
+    background: #070d1a;
+
+    color: white;
+}
+
+
+.projects h2 {
+
+    font-size: clamp(34px, 5vw, 48px);
+
+    margin-bottom: 15px;
+}
+
+
+.projects-description {
+
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+
+    color: #94a3b8;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* Projects Grid */
+
+.projects-grid {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 25px;
+}
+
+
+/* Project Card */
+
+        /* Project Preview */
+
+        .project-image {
+
+            height: 170px;
+
+            margin: -32px -32px 25px -32px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(59,130,246,0.25),
+                    transparent 60%
+                ),
+                #0b1325;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+
+        /* Grid pattern */
+
+        .project-image::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,0.04) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.04) 1px,
+                    transparent 1px
+                );
+
+            background-size: 30px 30px;
+        }
+
+
+        /* Project preview text */
+
+        .project-image span {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 34px;
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+            color: white;
+
+            text-shadow:
+                0 0 20px
+                rgba(59,130,246,0.8);
+
+            transition:
+                transform 0.4s ease;
+        }
+
+
+        /* Image hover */
+
+        .project-card:hover .project-image span {
+
+            transform:
+                scale(1.12);
+
+        }
+
+.project-card {
+
+    position: relative;
+
+    padding: 32px;
+
+    text-align: left;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Glowing top line */
+
+.project-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3b82f6,
+            #8b5cf6,
+            #ec4899
+        );
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* Hover */
+
+.project-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(59,130,246,0.35);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,0.3);
+}
+
+
+.project-card:hover::before {
+
+    transform:
+        scaleX(1);
+}
+
+
+/* Project Number */
+
+.project-number {
+
+    color: #3b82f6;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Project Title */
+
+.project-card h3 {
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+
+    color: white;
+}
+
+
+/* Project Description */
+
+.project-card p {
+
+    color: #94a3b8;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Technologies */
+
+.project-tech {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+
+.project-tech span {
+
+    padding:
+        6px 10px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    color: #bfdbfe;
+
+    background:
+        rgba(59,130,246,0.1);
+
+    border:
+        1px solid
+        rgba(59,130,246,0.15);
+}
+
+
+/* Project Buttons */
+
+.project-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.project-btn {
+
+    padding:
+        9px 15px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        0.3s ease;
+}
+
+
+.project-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(37,99,235,0.3);
+}
+
+
+.project-live {
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    transition:
+        0.3s ease;
+}
+
+
+.project-live:hover {
+
+    color: white;
+}  
 
         /* =========================================================
            CONTACT
@@ -1067,12 +1454,40 @@
             font-size: 20px;
 
             cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .menu-btn:hover,
+        .menu-btn:focus-visible {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(59,130,246,0.45);
+        }
+
+        :focus-visible {
+            outline: 2px solid #60a5fa;
+            outline-offset: 3px;
         }
 
 
         /* =========================================================
            MOBILE RESPONSIVE DESIGN
         ========================================================= */
+
+        /* Respect users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
 
         @media (max-width: 850px) {
 
@@ -1152,16 +1567,7 @@
                 bottom:
                     3px;
             }
-
-
-            .nav-btn {
-
-                display:
-                    inline-block;
-            }
-
-
-            .menu-btn {
+.menu-btn {
 
                 display:
                     block;
@@ -1305,7 +1711,7 @@
 
             <img
                 src="logo.png"
-                alt="VanguardHorizon X Logo"
+                alt="VanguardHorizonX logo"
                 class="animated-logo"
             >
 
@@ -1327,38 +1733,38 @@
         <ul id="navMenu">
 
             <li>
-                <a href="#about">
-                    About
-                </a>
+                <a href="#about">About</a>
             </li>
 
             <li>
-                <a href="#skills">
-                    Skills
-                </a>
+                <a href="#skills">Skills</a>
             </li>
 
             <li>
-                <a href="#contact">
-                    Contact
-                </a>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
             </li>
 
             <li>
                 <a href="#contact" class="nav-btn">
-                    Let's Connect →
+                   Let's Connect <span>→</span>
                 </a>
             </li>
 
         </ul>
 
-
-        <!-- Mobile Menu -->
+<!-- Mobile Menu -->
 
         <button
             class="menu-btn"
             id="menuBtn"
+            type="button"
             aria-label="Open navigation menu"
+            aria-controls="navMenu"
+            aria-expanded="false"
         >
             ☰
         </button>
@@ -1592,7 +1998,167 @@
 
     </section>
 
+<!-- =========================================================
+     PROJECTS SECTION
+========================================================= -->
 
+<section id="projects" class="projects">
+
+    <div class="section-label">
+        Portfolio
+    </div>
+
+    <h2>
+        My Projects
+    </h2>
+
+    <p class="projects-description">
+        A collection of projects I am building while
+        developing my skills in modern web technologies.
+    </p>
+
+
+    <div class="projects-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+            
+            <div class="project-image">
+                <span>VHX</span>
+            </div>
+
+            <div class="project-number">
+                01
+            </div>
+
+            <h3>
+                VanguardHorizon X
+            </h3>
+
+            <p>
+                A modern developer portfolio website built
+                with HTML, CSS and JavaScript.
+            </p>
+
+            <div class="project-tech">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+
+            </div>
+
+            <div class="project-links">
+
+                <a href="https://github.com/" class="project-btn" target="_blank" rel="noopener noreferrer">
+                    GitHub →
+                </a>
+
+                <a href="#projects" class="project-live">
+                    Live Demo
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+            
+            <div class="project-image">
+                <span>MERN</span>
+            </div>
+
+            <div class="project-number">
+                02
+            </div>
+
+            <h3>
+                MERN Project
+            </h3>
+
+            <p>
+                A full-stack web application that will be
+                developed using MongoDB, Express, React and Node.js.
+            </p>
+
+            <div class="project-tech">
+
+                <span>MongoDB</span>
+                <span>Express</span>
+                <span>React</span>
+                <span>Node</span>
+
+            </div>
+
+            <div class="project-links">
+
+                <a href="https://github.com/" class="project-btn" target="_blank" rel="noopener noreferrer">
+                    GitHub →
+                </a>
+
+                <a href="#projects" class="project-live">
+                    Coming Soon
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project-card">
+
+            
+            <div class="project-image">
+                <span>FUTURE</span>
+            </div>
+
+            <div class="project-number">
+                03
+            </div>
+
+            <h3>
+                Future Project
+            </h3>
+
+            <p>
+                A future project focused on cloud,
+                cybersecurity or another advanced technology.
+            </p>
+
+            <div class="project-tech">
+
+                <span>Cloud</span>
+                <span>Security</span>
+                <span>AI</span>
+
+            </div>
+
+            <div class="project-links">
+
+                <a href="https://github.com/" class="project-btn" target="_blank" rel="noopener noreferrer">
+                    GitHub →
+                </a>
+
+                <a href="#projects" class="project-live">
+                    Coming Soon
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- =========================================================
          CONTACT SECTION
@@ -1695,49 +2261,47 @@
            MOBILE MENU
         ========================================================= */
 
-        const menuBtn =
-            document.getElementById("menuBtn");
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("navMenu");
 
-        const navMenu =
-            document.getElementById("navMenu");
-
-
-        menuBtn.addEventListener(
-            "click",
-            function () {
-
-                navMenu.classList.toggle("active");
-
-            }
-        );
-
-
-        /* Close mobile menu when link is clicked */
-
-        const navLinks =
-            document.querySelectorAll(
-                "#navMenu a"
+        function setMenuState(isOpen) {
+            navMenu.classList.toggle("active", isOpen);
+            menuBtn.setAttribute("aria-expanded", String(isOpen));
+            menuBtn.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
             );
+            menuBtn.textContent = isOpen ? "✕" : "☰";
+        }
 
+        menuBtn.addEventListener("click", function () {
+            const isOpen = navMenu.classList.contains("active");
+            setMenuState(!isOpen);
+        });
 
-        navLinks.forEach(
-            function (link) {
+        /* Close mobile menu when a link is clicked */
+        const navLinks = document.querySelectorAll("#navMenu a");
 
-                link.addEventListener(
-                    "click",
-                    function () {
+        navLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                setMenuState(false);
+            });
+        });
 
-                        navMenu.classList.remove(
-                            "active"
-                        );
-
-                    }
-                );
-
+        /* Close mobile menu with Escape */
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && navMenu.classList.contains("active")) {
+                setMenuState(false);
+                menuBtn.focus();
             }
-        );
+        });
 
-
+        /* Keep menu state correct when resizing back to desktop */
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 850) {
+                setMenuState(false);
+            }
+        });
 
         /* =========================================================
            DYNAMIC DEVELOPER ROLE
