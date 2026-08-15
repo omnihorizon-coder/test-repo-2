@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,6 +90,7 @@
             gap: 15px;
 
             cursor: pointer;
+            text-decoration: none;
             transition: transform 0.3s ease;
         }
 
@@ -832,90 +834,165 @@
         }
 
 
-        .card {
+      .card {
 
-            padding:
-                28px
-                20px;
+    background-color: white;
 
-            border-radius: 16px;
+    padding: 28px 22px;
 
-            background: white;
+    border-radius: 16px;
 
-            border:
-                1px solid
-                #e2e8f0;
+    border: 1px solid #e2e8f0;
 
-            font-weight: 700;
+    font-weight: 600;
 
-            color: #334155;
+    color: #334155;
 
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
+    text-align: left;
 
-            position: relative;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 
-            overflow: hidden;
-        }
+    position: relative;
+
+    overflow: hidden;
+}
 
 
-        .card::before {
+.card:hover {
 
-            content: "";
+    transform:
+        translateY(-8px);
 
-            position: absolute;
+    border-color:
+        rgba(59,130,246,0.35);
 
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 3px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #3b82f6,
-                    #8b5cf6
-                );
-
-            transform:
-                scaleX(0);
-
-            transition:
-                0.3s ease;
-        }
+    box-shadow:
+        0 15px 35px
+        rgba(15,23,42,0.12);
+}
 
 
-        .card:hover::before {
+.card-icon {
 
-            transform:
-                scaleX(1);
-        }
+    font-size: 30px;
 
-
-        .card:hover {
-
-            transform:
-                translateY(-8px);
-
-            border-color:
-                rgba(59,130,246,0.3);
-
-            box-shadow:
-                0 15px 35px
-                rgba(15,23,42,0.1);
-        }
+    margin-bottom: 15px;
+}
 
 
-        .card-icon {
+.card h3 {
 
-            font-size: 30px;
+    font-size: 20px;
 
-            margin-bottom: 12px;
-        }
+    margin-bottom: 6px;
 
+    color: #0f172a;
+}
+
+
+.card p {
+
+    font-size: 14px;
+
+    color: #64748b;
+
+    margin-bottom: 18px;
+}
+
+
+/* Skill bar background */
+
+.skill-bar {
+
+    width: 100%;
+
+    height: 7px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 10px;
+}
+
+
+/* Skill bar */
+
+.skill-progress {
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    animation:
+        skillLoad 1.5s ease;
+}
+
+
+/* Skill levels */
+
+.mongodb {
+    width: 55%;
+}
+
+.express {
+    width: 40%;
+}
+
+.react {
+    width: 50%;
+}
+
+.node {
+    width: 45%;
+}
+
+.javascript {
+    width: 60%;
+}
+
+.git {
+    width: 55%;
+}
+
+.cloud {
+    width: 20%;
+}
+
+.security {
+    width: 15%;
+}
+
+
+.skill-status {
+
+    font-size: 12px;
+
+    color: #64748b;
+
+    font-weight: 600;
+}
+
+
+@keyframes skillLoad {
+
+    from {
+        width: 0;
+    }
+
+}
 /* =========================================================
    PROJECTS SECTION
 ========================================================= */
@@ -1295,92 +1372,336 @@
 }  
 
         /* =========================================================
-           CONTACT
-        ========================================================= */
+   CONTACT SECTION
+========================================================= */
 
-        .contact {
+.contact {
 
-            padding:
-                110px 20px;
+    position: relative;
 
-            text-align: center;
+    padding:
+        120px 20px;
 
-            background:
+    text-align: center;
 
-                radial-gradient(
-                    circle at center,
-                    rgba(59,130,246,0.14),
-                    transparent 35%
-                ),
+    overflow: hidden;
 
-                #0b1325;
-        }
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(59,130,246,0.13),
+            transparent 38%
+        ),
+        #0b1325;
 
-
-        .contact h2 {
-
-            font-size:
-                clamp(34px,5vw,50px);
-
-            margin-bottom: 15px;
-        }
+    color: white;
+}
 
 
-        .contact p {
+/* Background glow */
 
-            max-width: 650px;
+.contact-glow {
 
-            margin:
-                0 auto 30px;
+    position: absolute;
 
-            color: #94a3b8;
+    width: 300px;
+    height: 300px;
 
-            line-height: 1.7;
-        }
+    top: 50%;
+    left: 50%;
 
+    transform:
+        translate(-50%, -50%);
 
-        .email-link {
+    border-radius: 50%;
 
-            display: inline-block;
+    background:
+        rgba(59,130,246,0.12);
 
-            padding:
-                15px
-                24px;
+    filter:
+        blur(100px);
 
-            border:
-                1px solid
-                rgba(59,130,246,0.35);
-
-            border-radius: 12px;
-
-            color: #60a5fa;
-
-            background:
-                rgba(59,130,246,0.08);
-
-            font-size: 19px;
-
-            font-weight: 700;
-
-            transition:
-                0.3s ease;
-        }
+    pointer-events:
+        none;
+}
 
 
-        .email-link:hover {
+/* Main content */
 
-            color: white;
+.contact-content {
 
-            background:
-                rgba(59,130,246,0.18);
+    position: relative;
 
-            transform:
-                translateY(-3px);
+    z-index: 2;
 
-            box-shadow:
-                0 10px 30px
-                rgba(59,130,246,0.2);
-        }
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+/* Heading */
+
+.contact h2 {
+
+    font-size:
+        clamp(36px, 5vw, 56px);
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+
+.contact h2 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #3b82f6,
+            #8b5cf6
+        );
+
+    -webkit-background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+/* Description */
+
+.contact-content > p {
+
+    max-width: 650px;
+
+    margin:
+        0 auto 40px;
+
+    color: #94a3b8;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* Contact card */
+
+.contact-card {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding:
+        30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    backdrop-filter:
+        blur(10px);
+
+    transition:
+        0.3s ease;
+}
+
+
+.contact-card:hover {
+
+    border-color:
+        rgba(59,130,246,0.35);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,0.25);
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* Contact information */
+
+.contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+}
+
+
+.contact-icon {
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(59,130,246,0.1);
+
+    border:
+        1px solid
+        rgba(59,130,246,0.2);
+
+    font-size: 22px;
+}
+
+
+.contact-label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        1px;
+}
+
+
+.contact-email {
+
+    color:
+        #60a5fa;
+
+    font-size:
+        16px;
+
+    font-weight:
+        600;
+
+    transition:
+        0.3s ease;
+}
+
+
+.contact-email:hover {
+
+    color: white;
+}
+
+
+/* Email button */
+
+.email-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        13px 20px;
+
+    border-radius:
+        10px;
+
+    color: white;
+
+    font-weight:
+        700;
+
+    white-space:
+        nowrap;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(37,99,235,0.25);
+
+    transition:
+        0.3s ease;
+}
+
+
+.email-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(37,99,235,0.4);
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .contact-card {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .contact-item {
+
+        justify-content:
+            center;
+
+        text-align:
+            center;
+
+    }
+
+
+    .email-button {
+
+        width:
+            100%;
+
+    }
+
+}
 
 
         /* =========================================================
@@ -1694,7 +2015,167 @@
 
         }
 
-    </style>
+    
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.about {
+
+    padding: 110px 8%;
+
+    background: #0b1325;
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.about::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    left: -150px;
+    top: 50px;
+
+    border-radius: 50%;
+
+    background: rgba(59,130,246,0.12);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+.about-content {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.about h2 {
+
+    font-size:
+        clamp(34px, 5vw, 48px);
+
+    margin-bottom: 30px;
+}
+
+
+.about-content > p {
+
+    max-width: 750px;
+
+    margin:
+        0 auto 18px;
+
+    color: #94a3b8;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* About statistics */
+
+.about-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    max-width: 700px;
+
+    margin:
+        45px auto 0;
+}
+
+
+.stat {
+
+    padding:
+        25px 15px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    transition:
+        0.3s ease;
+}
+
+
+.stat:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(59,130,246,0.35);
+
+    background:
+        rgba(59,130,246,0.07);
+}
+
+
+.stat strong {
+
+    display: block;
+
+    font-size: 22px;
+
+    color: white;
+
+    margin-bottom: 7px;
+}
+
+
+.stat span {
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+@media (max-width: 600px) {
+
+    .about-stats {
+
+        grid-template-columns: 1fr;
+
+        max-width: 300px;
+    }
+
+}
+</style>
 </head>
 
 
@@ -1707,25 +2188,25 @@
 
     <nav id="navbar">
 
-        <div class="logo-box">
+        <a href="#" class="logo-box">
 
-            <img
-                src="logo.png"
-                alt="VanguardHorizonX logo"
-                class="animated-logo"
-            >
+    <img
+        src="logo.png"
+        alt="VanguardHorizon X Logo"
+        class="animated-logo"
+    >
 
-            <div class="logo">
+    <div class="logo">
 
-                VanguardHorizon
+        VanguardHorizon
 
-                <span class="red-blue-x">
-                    X
-                </span>
+        <span class="red-blue-x">
+            X
+        </span>
 
-            </div>
+    </div>
 
-        </div>
+</a>
 
 
         <!-- Desktop / Mobile Navigation -->
@@ -1778,7 +2259,7 @@
     ========================================================= -->
 
     <section
-        id="about"
+        id="hero"
         class="hero"
     >
 
@@ -1857,7 +2338,62 @@
         </div>
 
     </section>
+    <!-- =========================================================
+     ABOUT SECTION
+    ========================================================= -->
 
+<section id="about" class="about">
+
+    <div class="about-content">
+
+        <div class="section-label">
+            About Me
+        </div>
+
+        <h2>
+            Building My Path in Technology
+        </h2>
+
+        <p>
+            I'm a developer focused on building my skills in
+            modern web development and full-stack technologies.
+        </p>
+
+        <p>
+            I'm currently learning the MERN stack, including
+            MongoDB, Express.js, React.js and Node.js, while
+            exploring areas such as cloud computing,
+            cybersecurity and emerging technologies.
+        </p>
+
+        <p>
+            My goal is to create useful, secure and scalable
+            digital solutions while continuously expanding
+            my knowledge and technical abilities.
+        </p>
+
+        <div class="about-stats">
+
+            <div class="stat">
+                <strong>MERN</strong>
+                <span>Learning</span>
+            </div>
+
+            <div class="stat">
+                <strong>Web</strong>
+                <span>Development</span>
+            </div>
+
+            <div class="stat">
+                <strong>Future</strong>
+                <span>Technology</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
     <!-- =========================================================
@@ -1888,115 +2424,221 @@
         </p>
 
 
-        <div class="grid">
+    <div class="grid">
 
+    <!-- MongoDB -->
+    <div class="card">
 
-            <!-- MongoDB -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🗄️
-                </div>
-
-                MongoDB
-
-            </div>
-
-
-            <!-- Express -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    ⚡
-                </div>
-
-                Express.js
-
-            </div>
-
-
-            <!-- React -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    ⚛️
-                </div>
-
-                React.js
-
-            </div>
-
-
-            <!-- Node -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🟢
-                </div>
-
-                Node.js
-
-            </div>
-
-
-            <!-- JavaScript -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    📜
-                </div>
-
-                JavaScript
-
-            </div>
-
-
-            <!-- Git -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🔧
-                </div>
-
-                Git & GitHub
-
-            </div>
-
-
-            <!-- Future skill -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    ☁️
-                </div>
-
-                Cloud
-
-            </div>
-
-
-            <!-- Future skill -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🔐
-                </div>
-
-                Cybersecurity
-
-            </div>
-
+        <div class="card-icon">
+            🗄️
         </div>
 
+        <h3>
+            MongoDB
+        </h3>
+
+        <p>
+            Database
+        </p>
+
+        <div class="skill-bar">
+            <div class="skill-progress mongodb"></div>
+        </div>
+
+        <span class="skill-status">
+            Learning
+        </span>
+
+    </div>
+
+
+    <!-- Express -->
+    <div class="card">
+
+        <div class="card-icon">
+            ⚡
+        </div>
+
+        <h3>
+            Express.js
+        </h3>
+
+        <p>
+            Backend Framework
+        </p>
+
+        <div class="skill-bar">
+            <div class="skill-progress express"></div>
+        </div>
+
+        <span class="skill-status">
+            Learning
+        </span>
+
+    </div>
+
+
+    <!-- React -->
+    <div class="card">
+
+        <div class="card-icon">
+            ⚛️
+        </div>
+
+        <h3>
+            React.js
+        </h3>
+
+        <p>
+            Frontend Development
+        </p>
+
+        <div class="skill-bar">
+            <div class="skill-progress react"></div>
+        </div>
+
+        <span class="skill-status">
+            Learning
+        </span>
+
+    </div>
+
+
+    <!-- Node -->
+    <div class="card">
+
+        <div class="card-icon">
+            🟢
+        </div>
+
+        <h3>
+            Node.js
+        </h3>
+
+        <p>
+            Runtime & Backend
+        </p>
+
+        <div class="skill-bar">
+            <div class="skill-progress node"></div>
+        </div>
+
+        <span class="skill-status">
+            Learning
+        </span>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <div class="card">
+
+        <div class="card-icon">
+            📜
+        </div>
+
+        <h3>
+            JavaScript
+        </h3>
+
+        <p>
+            Programming Language
+        </p>
+
+        <div class="skill-bar">
+            <div class="skill-progress javascript"></div>
+        </div>
+
+        <span class="skill-status">
+            Learning
+        </span>
+
+    </div>
+
+
+    <!-- GitHub -->
+    <div class="card">
+
+        <div class="card-icon">
+            🔧
+        </div>
+
+        <h3>
+            Git & GitHub
+        </h3>
+
+        <p>
+            Version Control
+        </p>
+
+        <div class="skill-bar">
+            <div class="skill-progress git"></div>
+        </div>
+
+        <span class="skill-status">
+            Learning
+        </span>
+
+    </div>
+
+
+    <!-- Cloud -->
+    <div class="card">
+
+        <div class="card-icon">
+            ☁️
+        </div>
+
+        <h3>
+            Cloud
+        </h3>
+
+        <p>
+            Future Focus
+        </p>
+
+        <div class="skill-bar">
+            <div class="skill-progress cloud"></div>
+        </div>
+
+        <span class="skill-status">
+            Exploring
+        </span>
+
+    </div>
+
+
+    <!-- Cybersecurity -->
+    <div class="card">
+
+        <div class="card-icon">
+            🔐
+        </div>
+
+        <h3>
+            Cybersecurity
+        </h3>
+
+        <p>
+            Future Focus
+        </p>
+
+        <div class="skill-bar">
+            <div class="skill-progress security"></div>
+        </div>
+
+        <span class="skill-status">
+            Exploring
+        </span>
+
+    </div>
+
+</div>
+
+            
+
     </section>
+
 
 <!-- =========================================================
      PROJECTS SECTION
@@ -2164,10 +2806,19 @@
          CONTACT SECTION
     ========================================================= -->
 
-    <section
-        id="contact"
-        class="contact"
-    >
+    <!-- =========================================================
+     CONTACT SECTION
+========================================================= -->
+
+<section
+    id="contact"
+    class="contact"
+>
+
+    <div class="contact-glow"></div>
+
+
+    <div class="contact-content">
 
         <div class="section-label">
             Contact
@@ -2175,28 +2826,62 @@
 
 
         <h2>
-            Let's Build Something Great.
+            Let's Build Something
+            <span>Great.</span>
         </h2>
 
 
         <p>
 
-            Have an opportunity, project idea,
-            collaboration, or just want to connect?
+            Have a project idea, opportunity,
+            collaboration, or simply want to connect?
 
-            Send me an email and let's talk.
+            I'd be happy to hear from you.
 
         </p>
 
 
-        <a
-            href="mailto:your-email@example.com"
-            class="email-link"
-        >
-            your-email@example.com
-        </a>
+        <div class="contact-card">
 
-    </section>
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ✉️
+                </div>
+
+                <div>
+
+                    <span class="contact-label">
+                        Email
+                    </span>
+
+                    <a
+                        href="mailto:muhammad21ali2156@gmail.com"
+                        class="contact-email"
+                    >
+                        muhammad21ali2156@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="mailto:muhammad21ali2156@gmail.com"
+                class="email-button"
+            >
+                Send Me an Email →
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
 
 
 
